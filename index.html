@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محمد الحميقاني للديكورات والترميم | الرياض</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://res.cloudinary.com">
+<link rel="dns-prefetch" href="https://res.cloudinary.com">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+*{-webkit-user-select:none;-moz-user-select:none;user-select:none}
+input,textarea{-webkit-user-select:text;user-select:text}
+
+:root{
+  --navy:#0a1628;
+  --navy-2:#0f1f38;
+  --navy-3:#152b4a;
+
+  --gold:#C5A059;
+  --gold-2:#E2C792;
+  --gold-3:#A0783C;
+  --gold-4:#8B6914;
+  --gold-glow:rgba(197,160,89,.4);
+  --gold-glow-soft:rgba(197,160,89,.2);
+
+  --gray-50:#f8f9fb;
+  --gray-100:#eef1f5;
+  --gray-200:#dde2ea;
+  --gray-300:#c4ccd9;
+  --gray-400:#98a3b8;
+  --gray-500:#6b7891;
+  --gray-600:#4a5471;
+  --gray-700:#333d5c;
+  --gray-800:#1f2942;
+
+  --shadow:0 6px 20px rgba(10,22,40,.08);
+  --shadow-md:0 12px 30px rgba(10,22,40,.12);
+  --shadow-lg:0 20px 50px rgba(10,22,40,.18);
+  --shadow-xl:0 30px 70px rgba(10,22,40,.25);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+
+/* ============ GLOBAL BACKGROUND ============ */
+body{
+  font-family:'Tajawal',system-ui,sans-serif;
+  background: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=70') no-repeat center center fixed;
+  background-size: cover;
+  color:var(--gray-800);
+  line-height:1.8;
+  overflow-x:hidden;
+  position:relative;
+  will-change:scroll-position;
+  transform:translateZ(0);
+}
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:rgba(255,255,255,.72);
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* ============ FLOATING BUTTONS (أعلى الشاشة) ============ */
+.floating-btns{
+  position:fixed;
+  top:90px;
+  left:20px;
+  z-index:1000;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  animation:floatSlideIn .8s ease-out .3s both;
+}
+@keyframes floatSlideIn{
+  from{opacity:0;transform:translateY(-30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.float-btn{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  text-decoration:none;
+  font-size:1.5rem;
+  box-shadow:var(--shadow-lg);
+  transition:.3s;
+  position:relative;
+}
+.float-btn:hover{transform:scale(1.15) translateY(-3px)}
+.float-btn.whatsapp{background:linear-gradient(135deg,#25d366,#0d8a4a)}
+.float-btn.phone{background:linear-gradient(135deg,#3b82f6,#1a4fa0)}
+.float-btn::before{
+  content:'';
+  position:absolute;
+  inset:-4px;
+  border-radius:50%;
+  background:inherit;
+  opacity:.4;
+  animation:floatPulse 2s infinite;
+  z-index:-1;
+}
+@keyframes floatPulse{
+  0%,100%{transform:scale(1);opacity:.4}
+  50%{transform:scale(1.3);opacity:0}
+}
+
+/* ============ NAVBAR ============ */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:2px solid transparent;border-image:linear-gradient(90deg,var(--gold-3),var(--gold),var(--gold-3)) 1;padding:12px 0;transition:.3s}
+.navbar.dark-mode{background:rgba(10,22,40,.96)}
+.navbar.dark-mode .nav-links a{color:var(--gray-300)}
+.navbar.dark-mode .logo-text{color:#fff}
+.nav-inner{max-width:1300px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--navy-3));display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--gold-2);border:2px solid var(--gold);box-shadow:0 0 25px var(--gold-glow)}
+.logo-text{font-size:1.25rem;font-weight:900;color:var(--navy);letter-spacing:-.5px}
+.logo-text span{color:var(--gold-3)}
+.nav-links{display:flex;gap:22px;flex:1;justify-content:center}
+.nav-links a{color:var(--gray-600);text-decoration:none;font-size:.85rem;font-weight:700;transition:.3s;position:relative;padding:6px 0;white-space:nowrap}
+.nav-links a:hover{color:var(--gold-3)}
+.nav-links a::after{content:'';position:absolute;bottom:0;right:0;width:0;height:2px;background:linear-gradient(90deg,var(--gold-3),var(--gold),var(--gold-3));transition:.3s}
+.nav-links a:hover::after{width:100%}
+.nav-links a.dev-link{color:var(--gold-3);font-weight:900}
+.nav-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.theme-toggle{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gray-100),var(--gray-200));border:2px solid var(--gray-200);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--navy);transition:.3s}
+.theme-toggle:hover{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#fff;border-color:var(--gold);box-shadow:0 0 20px var(--gold-glow)}
+.nav-cta{padding:11px 24px;border-radius:12px;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--navy);font-weight:900;text-decoration:none;font-size:.85rem;transition:.3s;box-shadow:0 8px 25px var(--gold-glow)}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 35px var(--gold-glow)}
+
+/* ============ MOBILE MENU ============ */
+.menu-toggle-mobile{display:none;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--navy);font-size:1.3rem;cursor:pointer;border:none;align-items:center;justify-content:center;transition:.3s;box-shadow:0 4px 15px var(--gold-glow)}
+.menu-toggle-mobile:hover{transform:scale(1.05)}
+.mobile-menu{position:fixed;top:0;right:-100%;width:85%;max-width:340px;height:100vh;background:linear-gradient(145deg,var(--navy),var(--navy-3));z-index:9999;transition:right .35s cubic-bezier(.4,0,.2,1);padding:24px 20px;overflow-y:auto;box-shadow:-10px 0 40px rgba(0,0,0,.5)}
+.mobile-menu.open{right:0}
+.mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;padding-bottom:20px;border-bottom:2px solid rgba(197,160,89,.4)}
+.mobile-menu-header .brand{display:flex;align-items:center;gap:10px;font-size:1.1rem;font-weight:900;color:#fff}
+.mobile-menu-header .brand-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.3rem;box-shadow:0 0 20px var(--gold-glow)}
+.mobile-menu-close{width:42px;height:42px;border-radius:50%;background:rgba(197,160,89,.15);color:var(--gold-2);border:1px solid rgba(197,160,89,.4);font-size:1.2rem;cursor:pointer;transition:.3s}
+.mobile-menu-close:hover{background:var(--gold);color:var(--navy);transform:rotate(90deg)}
+.mobile-menu-links{list-style:none;padding:0;margin:0}
+.mobile-menu-links li{margin-bottom:6px}
+.mobile-menu-links a{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;color:#fff;text-decoration:none;font-weight:700;font-size:1rem;transition:.3s;border:1px solid transparent}
+.mobile-menu-links a:hover{background:rgba(197,160,89,.12);border-color:rgba(197,160,89,.4);color:var(--gold-2);transform:translateX(-6px)}
+.mobile-menu-links a i{width:38px;height:38px;border-radius:10px;background:rgba(197,160,89,.15);display:flex;align-items:center;justify-content:center;color:var(--gold-2);font-size:.95rem;flex-shrink:0}
+.mobile-menu-links a.dev-link-item{background:linear-gradient(135deg,rgba(197,160,89,.18),rgba(197,160,89,.05));border-color:rgba(197,160,89,.4);color:var(--gold-2);margin-top:10px}
+.mobile-menu-cta{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:20px;padding:15px 20px;border-radius:14px;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--navy);font-weight:900;text-decoration:none;font-size:1rem;box-shadow:0 12px 30px var(--gold-glow);transition:.3s}
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9998;opacity:0;visibility:hidden;transition:.3s;backdrop-filter:blur(2px)}
+.mobile-overlay.open{opacity:1;visibility:visible}
+
+/* ============ HERO ============ */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 20px 80px;position:relative;text-align:center;overflow:hidden;background:var(--navy)}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=70');background-size:cover;background-position:center;z-index:1}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,.94),rgba(15,31,56,.85));z-index:2}
+.hero::before{content:'';position:absolute;top:-30%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(197,160,89,.28),transparent 70%);pointer-events:none;z-index:3}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(197,160,89,.18),transparent 70%);pointer-events:none;z-index:3}
+.hero-content{max-width:950px;position:relative;z-index:4;color:#fff}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:12px 26px;border-radius:999px;background:linear-gradient(135deg,rgba(197,160,89,.25),rgba(197,160,89,.08));border:1.5px solid rgba(197,160,89,.65);color:var(--gold-2);font-size:.92rem;font-weight:800;margin-bottom:32px;backdrop-filter:blur(5px);box-shadow:0 0 35px var(--gold-glow)}
+.hero-badge i{font-size:.85rem;color:var(--gold-2);animation:starTwinkle 2s infinite}
+@keyframes starTwinkle{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.2);opacity:.7}}
+.hero h1{font-size:clamp(2.4rem,7vw,5rem);font-weight:900;line-height:1.15;margin-bottom:30px;color:#fff;text-shadow:0 4px 50px rgba(0,0,0,.7);letter-spacing:-.5px}
+.hero h1 span{display:inline-block;background:linear-gradient(135deg,var(--gold-2) 0%,var(--gold) 50%,var(--gold-2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 30px rgba(197,160,89,.5))}
+.hero p{font-size:clamp(1.05rem,2.3vw,1.35rem);color:rgba(255,255,255,.92);max-width:760px;margin:0 auto 46px;line-height:2.1;text-shadow:0 2px 15px rgba(0,0,0,.5);font-weight:500}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:60px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:17px 36px;border-radius:14px;font-weight:900;text-decoration:none;font-size:1.05rem;transition:.3s;border:none;cursor:pointer;font-family:inherit}
+.btn-gold{background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--navy);box-shadow:0 15px 40px var(--gold-glow),inset 0 -3px 0 rgba(0,0,0,.15)}
+.btn-gold:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 20px 50px var(--gold-glow),inset 0 -3px 0 rgba(0,0,0,.15)}
+.btn-outline{background:rgba(255,255,255,.1);border:2px solid rgba(197,160,89,.7);color:var(--gold-2);backdrop-filter:blur(5px)}
+.btn-outline:hover{background:var(--gold);border-color:var(--gold);color:var(--navy);transform:translateY(-4px);box-shadow:0 15px 35px var(--gold-glow)}
+.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:520px;margin:0 auto;padding:34px 30px;border-radius:26px;background:linear-gradient(135deg,rgba(197,160,89,.12),rgba(197,160,89,.03));border:1.5px solid rgba(197,160,89,.4);backdrop-filter:blur(5px);box-shadow:0 0 50px rgba(197,160,89,.15)}
+.stat{text-align:center}
+.stat strong{display:block;font-size:clamp(2rem,4vw,2.8rem);font-weight:900;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:6px;line-height:1;filter:drop-shadow(0 0 15px rgba(197,160,89,.5))}
+.stat span{color:rgba(255,255,255,.9);font-size:.95rem;font-weight:700}
+.scroll-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));border:2px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.2rem;animation:scrollDown 2s infinite;cursor:pointer;box-shadow:0 0 30px var(--gold-glow);z-index:4}
+@keyframes scrollDown{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(12px)}}
+
+/* ============ SECTIONS ============ */
+.section{padding:100px 20px;position:relative;background:rgba(255,255,255,.35);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.section.gray{background:rgba(255,255,255,.25)}
+.section.navy{background:linear-gradient(145deg,rgba(10,22,40,.97),rgba(21,43,74,.97));color:#fff}
+.section-head{text-align:center;margin-bottom:60px}
+.section-tag{display:inline-block;padding:9px 24px;border-radius:999px;background:linear-gradient(135deg,rgba(197,160,89,.22),rgba(197,160,89,.06));border:1.5px solid rgba(197,160,89,.5);color:var(--gold-3);font-size:.88rem;font-weight:900;margin-bottom:18px;letter-spacing:.5px}
+.section.navy .section-tag{color:var(--gold-2)}
+.section-title{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;margin-bottom:18px;color:var(--navy);line-height:1.3}
+.section.navy .section-title{color:#fff}
+.section-sub{color:var(--gray-500);font-size:1.12rem;max-width:680px;margin:0 auto;line-height:1.9;font-weight:500}
+.section.navy .section-sub{color:rgba(255,255,255,.88)}
+.container{max-width:1200px;margin:0 auto}
+
+/* ============ ABOUT ============ */
+.about-hero{position:relative;padding:130px 20px;overflow:hidden;background:var(--navy)}
+.about-hero .about-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=70');background-size:cover;background-position:center;z-index:1}
+.about-hero .about-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,.94),rgba(15,31,56,.85));z-index:2}
+.about-hero::before{content:'';position:absolute;top:-20%;left:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(197,160,89,.25),transparent 70%);pointer-events:none;z-index:3}
+.about-hero .container{position:relative;z-index:4}
+.about-hero .section-tag{color:var(--gold-2);background:linear-gradient(135deg,rgba(197,160,89,.25),rgba(197,160,89,.08));border-color:rgba(197,160,89,.6)}
+.about-hero .section-title{color:#fff;text-shadow:0 4px 40px rgba(0,0,0,.6);font-size:clamp(2rem,5vw,3.2rem)}
+.about-hero .section-title span{background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 25px rgba(197,160,89,.6))}
+.about-hero .section-sub{color:rgba(255,255,255,.92);font-size:1.18rem}
+
+.row-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
+.row-card{padding:52px 42px;border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.03));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:2px solid rgba(197,160,89,.4);transition:.45s;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.row-card::before{content:'';position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(197,160,89,.25),transparent 70%);pointer-events:none;transition:.5s}
+.row-card::after{content:'';position:absolute;bottom:0;right:0;left:0;height:6px;background:linear-gradient(90deg,var(--gold-2),var(--gold),var(--gold-3),var(--gold-2));transform:scaleX(0);transition:.5s;transform-origin:right}
+.row-card:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 22px 45px rgba(0,0,0,.35),0 0 40px var(--gold-glow-soft);background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.05))}
+.row-card:hover::before{width:280px;height:280px}
+.row-card:hover::after{transform:scaleX(1)}
+.row-icon{width:88px;height:88px;border-radius:24px;background:linear-gradient(135deg,rgba(197,160,89,.28),rgba(197,160,89,.08));display:flex;align-items:center;justify-content:center;font-size:2.4rem;color:var(--gold-2);margin-bottom:28px;transition:.45s;border:2px solid rgba(197,160,89,.5);box-shadow:0 0 30px rgba(197,160,89,.2)}
+.row-card:hover .row-icon{background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--navy);transform:scale(1.08) rotate(-6deg);box-shadow:0 0 40px var(--gold-glow);border-color:transparent}
+.row-card h3{font-size:1.95rem;font-weight:900;margin-bottom:20px;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 10px rgba(197,160,89,.3))}
+.row-card p{color:rgba(255,255,255,.95);font-size:1.12rem;line-height:2.1;font-weight:500}
+
+/* ============ SERVICES ============ */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+.service-card{padding:0 0 32px;border-radius:28px;background:rgba(255,255,255,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border:2px solid rgba(197,160,89,.3);text-align:center;transition:all .45s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;right:0;left:0;height:6px;background:linear-gradient(90deg,var(--gold-2),var(--gold),var(--gold-3),var(--gold-2));transform:scaleX(0);transform-origin:center;transition:.45s;z-index:3}
+.service-card::after{content:'';position:absolute;bottom:-120px;right:-120px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(197,160,89,.22),transparent 70%);transition:.55s;pointer-events:none}
+.service-card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(10,22,40,.2),0 0 30px var(--gold-glow);border-color:var(--gold);background:rgba(255,255,255,.7)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover::after{bottom:-60px;right:-60px}
+.service-image{width:100%;height:180px;overflow:hidden;position:relative;margin-bottom:24px;background:linear-gradient(135deg,var(--gray-100),var(--gray-200))}
+.service-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.4,0,.2,1);filter:brightness(.92) saturate(1.15);image-rendering:-webkit-optimize-contrast}
+.service-card:hover .service-image img{transform:scale(1.1);filter:brightness(1) saturate(1.2)}
+.service-image::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,22,40,.65));pointer-events:none}
+.service-image-icon{position:absolute;bottom:14px;right:16px;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--navy);box-shadow:0 6px 20px var(--gold-glow);z-index:2;border:2px solid rgba(255,255,255,.6);transition:.45s}
+.service-card:hover .service-image-icon{transform:scale(1.1) rotate(-6deg)}
+.service-card h3{font-size:1.3rem;font-weight:900;margin:0 24px 12px;color:var(--navy);position:relative;z-index:1;line-height:1.4}
+.service-card p{color:var(--gray-600);font-size:.98rem;line-height:1.85;position:relative;z-index:1;padding:0 24px}
+.service-badge{position:absolute;top:16px;left:16px;padding:6px 16px;border-radius:999px;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--navy);font-size:.75rem;font-weight:900;letter-spacing:.5px;box-shadow:0 6px 20px var(--gold-glow);z-index:3}
+
+/* ============ RENOVATION ============ */
+.renovation-section{background:linear-gradient(145deg,rgba(10,22,40,.97),rgba(21,43,74,.97));position:relative;overflow:hidden}
+.renovation-section::before{content:'';position:absolute;top:-100px;left:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(197,160,89,.28),transparent 70%);pointer-events:none}
+.renovation-section::after{content:'';position:absolute;bottom:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(197,160,89,.2),transparent 70%);pointer-events:none}
+.renovation-content{position:relative;z-index:1}
+.renovation-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-bottom:48px}
+.renovation-card{padding:38px 28px;border-radius:24px;background:linear-gradient(145deg,rgba(197,160,89,.1),rgba(197,160,89,.02));border:1.5px solid rgba(197,160,89,.4);transition:.45s;text-align:center;backdrop-filter:blur(4px)}
+.renovation-card:hover{background:linear-gradient(145deg,rgba(197,160,89,.18),rgba(197,160,89,.06));border-color:var(--gold);transform:translateY(-6px);box-shadow:0 0 35px var(--gold-glow)}
+.renovation-icon{width:80px;height:80px;border-radius:24px;background:linear-gradient(135deg,rgba(197,160,89,.3),rgba(197,160,89,.08));display:inline-flex;align-items:center;justify-content:center;font-size:2.1rem;color:var(--gold-2);margin-bottom:22px;transition:.45s;border:1.5px solid rgba(197,160,89,.4)}
+.renovation-card:hover .renovation-icon{background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--navy);transform:scale(1.08) rotate(-5deg);border-color:transparent;box-shadow:0 0 30px var(--gold-glow)}
+.renovation-card h3{font-size:1.2rem;font-weight:900;margin-bottom:12px;color:#fff}
+.renovation-card p{color:rgba(255,255,255,.85);font-size:.95rem;line-height:1.8}
+.renovation-cta{text-align:center}
+.renovation-cta .btn{padding:18px 44px}
+
+/* ============ VIDEOS ============ */
+.videos-wrap{display:flex;flex-direction:column;gap:28px;max-width:800px;margin:0 auto}
+.video-card{max-width:800px;border-radius:26px;background:rgba(255,255,255,.9);backdrop-filter:blur(3px);border:2px solid rgba(197,160,89,.2);overflow:hidden;box-shadow:var(--shadow-md);transition:.45s}
+.video-card:hover{box-shadow:0 20px 45px rgba(10,22,40,.2),0 0 25px var(--gold-glow-soft);border-color:var(--gold);transform:translateY(-4px)}
+.video-wrapper{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,var(--navy),var(--navy-3));overflow:hidden;cursor:pointer}
+.video-wrapper video{width:100%;height:100%;object-fit:cover;display:block}
+.video-placeholder{width:100%;height:100%;transition:.45s}
+.video-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(10,22,40,.75));display:flex;align-items:center;justify-content:center;transition:.45s}
+.play-btn{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));display:flex;align-items:center;justify-content:center;font-size:2.3rem;color:var(--navy);box-shadow:0 0 0 14px rgba(197,160,89,.3),0 18px 50px rgba(0,0,0,.5),0 0 40px var(--gold-glow);transition:.45s;animation:playPulse 2.5s infinite}
+.play-btn::before{content:'\f04b';font-family:'Font Awesome 6 Free';font-weight:900;margin-right:4px}
+@keyframes playPulse{0%,100%{box-shadow:0 0 0 14px rgba(197,160,89,.3),0 18px 50px rgba(0,0,0,.5),0 0 40px var(--gold-glow)}50%{box-shadow:0 0 0 30px rgba(197,160,89,.05),0 18px 50px rgba(0,0,0,.5),0 0 60px var(--gold-glow)}}
+.video-card:hover .play-btn{transform:scale(1.08)}
+.video-card.playing .video-overlay{display:none}
+
+/* ============ GALLERY ============ */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.gallery-item{position:relative;aspect-ratio:1;border-radius:22px;overflow:hidden;cursor:pointer;background:var(--gray-100);box-shadow:var(--shadow);transition:.45s;border:2px solid transparent}
+.gallery-item:hover{transform:translateY(-5px) scale(1.01);box-shadow:0 15px 35px rgba(10,22,40,.25);border-color:var(--gold);z-index:2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease, filter .7s ease;filter:contrast(1.05) saturate(1.1) brightness(1.02);image-rendering:-webkit-optimize-contrast}
+.gallery-item:hover img{transform:scale(1.1);filter:contrast(1.1) saturate(1.18) brightness(1.05)}
+.gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(10,22,40,.85));opacity:0;transition:.45s}
+.gallery-item:hover::after{opacity:1}
+.gallery-zoom{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.5);width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.5rem;opacity:0;transition:.45s;z-index:2;box-shadow:0 0 35px var(--gold-glow)}
+.gallery-item:hover .gallery-zoom{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.gallery-counter{position:absolute;bottom:14px;right:14px;background:linear-gradient(135deg,rgba(10,22,40,.9),rgba(21,43,74,.9));color:var(--gold-2);padding:6px 14px;border-radius:999px;font-size:.75rem;font-weight:800;backdrop-filter:blur(4px);border:1px solid rgba(197,160,89,.4);z-index:3}
+@media(min-width:640px){.gallery-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+@media(min-width:900px){.gallery-grid{grid-template-columns:repeat(4,1fr);gap:18px}}
+
+/* ============ LIGHTBOX ============ */
+.lightbox{position:fixed;inset:0;background:linear-gradient(135deg,rgba(10,22,40,.98),rgba(0,0,0,.98));z-index:10000;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
+.lightbox.active{display:flex}
+.lightbox-img-wrap{position:relative;max-width:95%;max-height:80vh;display:flex;align-items:center;justify-content:center}
+.lightbox img{max-width:100%;max-height:80vh;border-radius:18px;box-shadow:0 30px 90px rgba(0,0,0,.9),0 0 60px var(--gold-glow);object-fit:contain}
+.lightbox-close{position:absolute;top:20px;right:20px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--navy);font-size:1.5rem;cursor:pointer;border:2px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;transition:.3s;z-index:10001;box-shadow:0 0 35px var(--gold-glow)}
+.lightbox-close:hover{transform:rotate(90deg) scale(1.1)}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,rgba(197,160,89,.35),rgba(197,160,89,.15));color:#fff;font-size:1.6rem;cursor:pointer;border:2px solid rgba(197,160,89,.6);display:flex;align-items:center;justify-content:center;transition:.3s;z-index:10001;backdrop-filter:blur(4px)}
+.lightbox-nav:hover{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:var(--navy);border-color:var(--gold);transform:translateY(-50%) scale(1.1);box-shadow:0 0 35px var(--gold-glow)}
+.lightbox-nav.prev{right:20px}
+.lightbox-nav.next{left:20px}
+.lightbox-counter{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--navy);padding:10px 26px;border-radius:999px;font-weight:900;font-size:.95rem;z-index:10001;box-shadow:0 0 35px var(--gold-glow)}
+.lightbox-thumbs{position:absolute;bottom:80px;left:50%;transform:translateX(-50%);display:flex;gap:6px;padding:8px;background:rgba(10,22,40,.7);border-radius:14px;max-width:90%;overflow-x:auto;z-index:10001;backdrop-filter:blur(4px);border:1px solid rgba(197,160,89,.3)}
+.lightbox-thumb{width:50px;height:50px;border-radius:8px;object-fit:cover;cursor:pointer;opacity:.5;transition:.3s;flex-shrink:0;border:2px solid transparent}
+.lightbox-thumb:hover{opacity:1}
+.lightbox-thumb.active{opacity:1;border-color:var(--gold);box-shadow:0 0 20px var(--gold-glow)}
+
+/* ============ WHY US ============ */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
+.why-card{padding:46px 28px;border-radius:24px;background:linear-gradient(145deg,rgba(197,160,89,.1),rgba(197,160,89,.02));border:1.5px solid rgba(197,160,89,.35);text-align:center;transition:.45s;backdrop-filter:blur(4px);position:relative;overflow:hidden}
+.why-card::before{content:'';position:absolute;top:0;right:0;left:0;height:5px;background:linear-gradient(90deg,var(--gold-2),var(--gold),var(--gold-3),var(--gold-2));transform:scaleX(0);transition:.45s;transform-origin:center}
+.why-card:hover{border-color:var(--gold);transform:translateY(-6px);background:linear-gradient(145deg,rgba(197,160,89,.18),rgba(197,160,89,.06));box-shadow:0 0 35px var(--gold-glow)}
+.why-card:hover::before{transform:scaleX(1)}
+.why-icon{width:92px;height:92px;border-radius:50%;background:linear-gradient(135deg,rgba(197,160,89,.3),rgba(197,160,89,.08));display:inline-flex;align-items:center;justify-content:center;font-size:2.4rem;color:var(--gold-2);margin-bottom:22px;transition:.45s;border:2px solid rgba(197,160,89,.4)}
+.why-card:hover .why-icon{background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--navy);transform:scale(1.08) rotate(-8deg);border-color:transparent;box-shadow:0 0 35px var(--gold-glow)}
+.why-card h3{font-size:1.25rem;font-weight:900;margin-bottom:12px;color:#fff}
+.why-card p{color:rgba(255,255,255,.85);font-size:.95rem;line-height:1.8}
+
+/* ============ FAQ ============ */
+.faq-list{max-width:840px;margin:0 auto}
+.faq-item{background:rgba(255,255,255,.9);backdrop-filter:blur(3px);border:2px solid rgba(197,160,89,.2);border-radius:20px;margin-bottom:16px;overflow:hidden;transition:.3s}
+.faq-item.open{border-color:var(--gold);box-shadow:0 20px 55px rgba(10,22,40,.15),0 0 30px var(--gold-glow-soft)}
+.faq-question{padding:26px 30px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:900;font-size:1.12rem;color:var(--navy);gap:16px}
+.faq-icon{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:900;transition:.3s;flex-shrink:0;box-shadow:0 0 20px var(--gold-glow-soft)}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:linear-gradient(135deg,var(--navy),var(--navy-3));color:var(--gold-2);box-shadow:none}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease;padding:0 30px;color:var(--gray-500);font-size:1rem;line-height:2}
+.faq-item.open .faq-answer{max-height:400px;padding:0 30px 26px}
+
+/* ============ REVIEWS (فارغ - جاهز لـ Firebase) ============ */
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
+.review-card{padding:36px;border-radius:24px;background:rgba(255,255,255,.9);backdrop-filter:blur(3px);border:2px solid rgba(197,160,89,.2);transition:.45s;position:relative}
+.review-card::before{content:'\f10d';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:22px;left:26px;font-size:2.5rem;color:rgba(197,160,89,.25)}
+.review-card:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 20px 45px rgba(10,22,40,.15),0 0 25px var(--gold-glow-soft)}
+.review-stars{color:var(--gold);font-size:1.25rem;margin-bottom:16px;letter-spacing:4px;filter:drop-shadow(0 0 8px var(--gold-glow-soft))}
+.review-text{color:var(--gray-600);font-size:1rem;line-height:2;margin-bottom:20px;font-style:italic;position:relative;z-index:1}
+.review-author{display:flex;align-items:center;gap:14px;padding-top:18px;border-top:2px solid var(--gray-100);position:relative;z-index:1}
+.review-avatar{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-3));display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--gold-2);font-size:1.25rem;flex-shrink:0;border:3px solid var(--gold);box-shadow:0 0 20px var(--gold-glow-soft)}
+.review-info h4{font-size:1.05rem;font-weight:900;margin-bottom:3px;color:var(--navy)}
+.review-info span{font-size:.85rem;color:var(--gray-500)}
+.reviews-empty{text-align:center;padding:60px 20px;background:rgba(255,255,255,.5);backdrop-filter:blur(3px);border:2px dashed rgba(197,160,89,.4);border-radius:24px;max-width:600px;margin:0 auto}
+.reviews-empty i{font-size:3rem;color:var(--gold-3);margin-bottom:20px;display:block;opacity:.7}
+.reviews-empty p{color:var(--gray-500);font-size:1.05rem;font-weight:500}
+
+/* ============ CONTACT ============ */
+.contact-hero{position:relative;padding:110px 20px;overflow:hidden;background:var(--navy)}
+.contact-hero .contact-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1615529182904-14819c35db37?w=1200&q=70');background-size:cover;background-position:center;z-index:1}
+.contact-hero .contact-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,.94),rgba(15,31,56,.85));z-index:2}
+.contact-hero .container{position:relative;z-index:3}
+.contact-hero .section-tag{color:var(--gold-2);background:linear-gradient(135deg,rgba(197,160,89,.25),rgba(197,160,89,.08));border-color:rgba(197,160,89,.6)}
+.contact-hero .section-title{color:#fff;text-shadow:0 4px 40px rgba(0,0,0,.6)}
+.contact-hero .section-sub{color:rgba(255,255,255,.9)}
+.contact-list{display:flex;flex-direction:column;gap:20px;max-width:680px;margin:0 auto}
+.contact-card{display:flex;align-items:center;gap:22px;padding:28px;border-radius:26px;background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.03));backdrop-filter:blur(6px);border:2px solid rgba(197,160,89,.35);text-decoration:none;color:inherit;transition:.4s;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.contact-card:not(.static-card):hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 25px 55px rgba(0,0,0,.45),0 0 35px var(--gold-glow);background:linear-gradient(145deg,rgba(255,255,255,.15),rgba(255,255,255,.05))}
+.contact-card:hover .contact-arrow{transform:translateX(-10px);color:var(--gold-2)}
+.contact-icon{width:80px;height:80px;border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:2.3rem;flex-shrink:0;transition:.4s;border:2px solid transparent}
+.contact-card:hover .contact-icon{transform:scale(1.08) rotate(-5deg)}
+.contact-icon.whatsapp{background:linear-gradient(135deg,rgba(37,211,102,.25),rgba(37,211,102,.05));border-color:rgba(37,211,102,.5);color:#25d366}
+.contact-icon.phone{background:linear-gradient(135deg,rgba(59,130,246,.25),rgba(59,130,246,.05));border-color:rgba(59,130,246,.5);color:#3b82f6}
+.contact-icon.location{background:linear-gradient(135deg,rgba(197,160,89,.25),rgba(197,160,89,.05));border-color:rgba(197,160,89,.5);color:var(--gold-2)}
+.contact-body{flex:1}
+.contact-body h3{font-size:1.25rem;font-weight:900;margin-bottom:6px;color:#fff}
+.contact-body p{font-size:.95rem;color:rgba(255,255,255,.85)}
+.contact-arrow{color:rgba(255,255,255,.6);font-size:1.4rem;transition:.4s;font-weight:900}
+
+/* ============ CTA ============ */
+.cta-section{background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));padding:100px 20px;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-50%;left:-20%;width:500px;height:500px;border-radius:50%;background:rgba(255,255,255,.2);pointer-events:none}
+.cta-section::after{content:'';position:absolute;bottom:-50%;right:-20%;width:500px;height:500px;border-radius:50%;background:rgba(0,0,0,.1);pointer-events:none}
+.cta-content{max-width:740px;margin:0 auto;position:relative;z-index:1}
+.cta-section h2{font-size:clamp(1.9rem,4.5vw,2.9rem);font-weight:900;color:var(--navy);margin-bottom:18px;text-shadow:0 2px 6px rgba(255,255,255,.5)}
+.cta-section p{color:rgba(10,22,40,.92);font-size:1.15rem;margin-bottom:34px;line-height:2;font-weight:600}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;padding:20px 48px;border-radius:16px;background:linear-gradient(135deg,var(--navy),var(--navy-3));color:#fff;font-weight:900;text-decoration:none;font-size:1.1rem;transition:.3s;box-shadow:0 18px 45px rgba(10,22,40,.45)}
+.cta-btn:hover{transform:translateY(-5px) scale(1.03);box-shadow:0 25px 55px rgba(10,22,40,.55)}
+
+/* ============ DEVELOPER ============ */
+.dev-card{max-width:840px;margin:0 auto;padding:60px 48px;border-radius:34px;background:rgba(255,255,255,.9);backdrop-filter:blur(5px);border:3px solid var(--gold);text-align:center;position:relative;overflow:hidden;box-shadow:0 30px 70px rgba(10,22,40,.15),0 0 50px var(--gold-glow-soft)}
+.dev-card::before{content:'';position:absolute;top:-50%;right:-20%;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(197,160,89,.28),transparent 70%);pointer-events:none}
+.dev-logo{display:inline-flex;align-items:center;gap:14px;margin-bottom:24px;position:relative;z-index:1}
+.dev-logo-icon{width:92px;height:92px;border-radius:26px;background:linear-gradient(135deg,var(--navy),var(--navy-3));display:flex;align-items:center;justify-content:center;font-size:2.6rem;font-weight:900;color:var(--gold-2);border:3px solid var(--gold);box-shadow:0 0 45px var(--gold-glow)}
+.dev-logo-text{font-size:2.3rem;font-weight:900;color:var(--navy)}
+.dev-logo-text span{color:var(--gold-3)}
+.dev-name{font-size:2.3rem;font-weight:900;margin-bottom:8px;position:relative;z-index:1;color:var(--navy)}
+.dev-role{font-size:1.15rem;color:var(--gold-3);font-weight:900;margin-bottom:26px;position:relative;z-index:1}
+.dev-bio{font-size:1.05rem;color:var(--gray-600);line-height:2.1;max-width:600px;margin:0 auto 32px;position:relative;z-index:1}
+.dev-bio strong{color:var(--gold-3)}
+.dev-contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:28px;position:relative;z-index:1}
+.dev-contact{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 20px;border-radius:14px;text-decoration:none;font-size:.92rem;font-weight:900;transition:.3s;border:2px solid;background:#fff}
+.dev-contact.whatsapp{border-color:rgba(37,211,102,.6);color:#25d366}
+.dev-contact.whatsapp:hover{background:#25d366;color:#fff;transform:translateY(-4px);box-shadow:0 15px 35px rgba(37,211,102,.4)}
+.dev-contact.telegram{border-color:rgba(0,136,204,.6);color:#0088cc}
+.dev-contact.telegram:hover{background:#0088cc;color:#fff;transform:translateY(-4px);box-shadow:0 15px 35px rgba(0,136,204,.4)}
+.dev-contact.channel{border-color:var(--gold);color:var(--gold-3)}
+.dev-contact.channel:hover{background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--navy);transform:translateY(-4px);box-shadow:0 15px 35px var(--gold-glow)}
+.dev-visit{display:flex;align-items:center;gap:14px;padding:22px 26px;border-radius:20px;background:linear-gradient(135deg,rgba(197,160,89,.15),rgba(197,160,89,.04));border:2px solid rgba(197,160,89,.5);text-decoration:none;color:inherit;transition:.3s;margin-bottom:24px;position:relative;z-index:1}
+.dev-visit:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 18px 45px rgba(0,0,0,.15),0 0 30px var(--gold-glow)}
+.dev-visit-icon{font-size:2.4rem;flex-shrink:0;color:var(--gold-3)}
+.dev-visit-body{flex:1;text-align:right}
+.dev-visit-title{display:block;font-size:1.1rem;font-weight:900;color:var(--navy);margin-bottom:4px}
+.dev-visit-sub{display:block;font-size:.85rem;color:var(--gray-500)}
+.dev-visit-arrow{color:var(--gold-3);font-size:1.6rem;transition:.3s;font-weight:900}
+.dev-visit:hover .dev-visit-arrow{transform:translateX(-8px)}
+.dev-footer{padding-top:24px;border-top:2px solid var(--gray-200);color:var(--gray-500);font-size:.9rem;position:relative;z-index:1;line-height:2}
+.dev-footer strong{color:var(--gold-3);font-weight:900}
+
+/* ============ FOOTER ============ */
+.footer{background:linear-gradient(145deg,var(--navy),var(--navy-3));color:#fff;padding:70px 20px 26px;position:relative;overflow:hidden}
+.footer::before{content:'';position:absolute;top:-50%;right:-20%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(197,160,89,.15),transparent 70%);pointer-events:none}
+.footer-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;margin-bottom:40px}
+.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.footer-brand-icon{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--navy);box-shadow:0 0 30px var(--gold-glow)}
+.footer-brand-text{font-size:1.35rem;font-weight:900}
+.footer-brand-text span{color:var(--gold-2)}
+.footer-col h4{font-size:1.15rem;font-weight:900;color:var(--gold-2);margin-bottom:20px;position:relative;padding-bottom:12px}
+.footer-col h4::after{content:'';position:absolute;bottom:0;right:0;width:46px;height:3px;background:linear-gradient(90deg,var(--gold-2),var(--gold),var(--gold-3));border-radius:2px}
+.footer-col p{color:rgba(255,255,255,.85);font-size:.95rem;line-height:2;margin-bottom:14px}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:10px}
+.footer-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.95rem;transition:.3s;display:inline-flex;align-items:center;gap:8px}
+.footer-links a::before{content:'\f105';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--gold-2);font-size:.85rem}
+.footer-links a:hover{color:var(--gold-2);transform:translateX(-4px)}
+.footer-contact-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;color:rgba(255,255,255,.9);font-size:.95rem;line-height:1.7}
+.footer-contact-item i{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,rgba(197,160,89,.25),rgba(197,160,89,.05));display:flex;align-items:center;justify-content:center;color:var(--gold-2);flex-shrink:0;margin-top:2px;border:1px solid rgba(197,160,89,.4)}
+.footer-contact-item span{flex:1}
+.footer-bottom{padding-top:26px;border-top:1px solid rgba(197,160,89,.3);text-align:center;font-size:.9rem;color:rgba(255,255,255,.85);line-height:2}
+.footer-bottom .dev-line{display:block;margin-bottom:8px;font-size:.92rem;color:rgba(255,255,255,.95)}
+.footer-bottom .dev-line strong{color:var(--gold-2)}
+.footer-bottom .rights-line{display:block;margin-bottom:12px;font-size:.9rem;color:rgba(255,255,255,.8)}
+.footer-bottom .rights-line strong{color:var(--gold-2);font-weight:900}
+.footer-bottom .dev-link-btn{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:11px 24px;border-radius:999px;background:linear-gradient(135deg,rgba(197,160,89,.2),rgba(197,160,89,.05));border:1.5px solid rgba(197,160,89,.5);color:var(--gold-2);text-decoration:none;font-weight:900;font-size:.88rem;transition:.3s}
+.footer-bottom .dev-link-btn:hover{background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--navy);transform:translateY(-3px);box-shadow:0 0 30px var(--gold-glow)}
+
+/* ============ DARK MODE ============ */
+body.dark{background:var(--navy-2);color:var(--gray-300)}
+body.dark::before{background:rgba(10,22,40,.85)}
+body.dark .navbar{background:rgba(10,22,40,.96)}
+body.dark .logo-text{color:#fff}
+body.dark .nav-links a{color:var(--gray-300)}
+body.dark .section{background:rgba(15,31,56,.55)}
+body.dark .section.gray{background:rgba(21,43,74,.5)}
+body.dark .section.navy{background:rgba(5,13,26,.95)}
+body.dark .section-title{color:#fff}
+body.dark .section-sub{color:var(--gray-400)}
+body.dark .service-card{background:rgba(21,43,74,.65);border-color:rgba(197,160,89,.3)}
+body.dark .service-card h3{color:#fff}
+body.dark .service-card p{color:var(--gray-400)}
+body.dark .video-card,body.dark .faq-item,body.dark .review-card,body.dark .dev-card{background:rgba(21,43,74,.9);border-color:rgba(197,160,89,.25);color:var(--gray-300)}
+body.dark .faq-question,body.dark .review-info h4,body.dark .dev-name,body.dark .dev-logo-text{color:#fff}
+body.dark .review-text,body.dark .faq-answer{color:var(--gray-400)}
+body.dark .reviews-empty{background:rgba(21,43,74,.7);border-color:rgba(197,160,89,.3)}
+body.dark .theme-toggle{background:var(--navy);border-color:rgba(197,160,89,.4);color:var(--gold-2)}
+body.dark .footer{background:#050d1a}
+
+/* ============ PERFORMANCE BOOST ============ */
+.section,
+.about-hero,
+.contact-hero,
+.renovation-section{
+  contain:layout style;
+}
+.videos-wrap,
+.gallery-grid,
+.services-grid,
+.why-grid,
+.faq-list,
+.reviews-grid{
+  content-visibility:auto;
+  contain-intrinsic-size:auto 800px;
+}
+.service-card,
+.gallery-item,
+.row-card,
+.video-card,
+.renovation-card,
+.why-card,
+.faq-item,
+.review-card,
+.contact-card{
+  contain:layout paint;
+  isolation:isolate;
+}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1000px){
+  .nav-links{display:none}
+  .nav-cta{display:none}
+  .menu-toggle-mobile{display:flex}
+  .floating-btns{top:78px;left:12px;gap:8px}
+  .float-btn{width:50px;height:50px;font-size:1.3rem}
+}
+@media(max-width:640px){
+  .section{padding:70px 16px}
+  .about-hero,.contact-hero{padding:90px 16px}
+  .hero{padding:100px 16px 80px;min-height:95vh}
+  .hero h1{font-size:clamp(2rem,8.5vw,2.9rem);line-height:1.2}
+  .hero p{font-size:1.02rem;line-height:1.95}
+  .hero-btns{flex-direction:column;align-items:stretch;gap:12px;margin-bottom:60px}
+  .hero-btns .btn{justify-content:center}
+  .hero-badge{font-size:.82rem;padding:9px 18px}
+  .scroll-indicator{width:46px;height:46px;bottom:20px}
+  .hero-stats{grid-template-columns:1fr;padding:24px;gap:16px}
+  .hero-stats .stat{display:flex;justify-content:space-between;align-items:center;text-align:right;padding:8px 0;border-bottom:1px solid rgba(197,160,89,.2)}
+  .hero-stats .stat:last-child{border-bottom:none}
+  .hero-stats .stat strong{margin:0;font-size:1.8rem}
+  .play-btn{width:78px;height:78px;font-size:1.9rem}
+  .footer-grid{grid-template-columns:1fr;gap:30px}
+  .dev-card{padding:40px 24px}
+  .dev-contacts{grid-template-columns:1fr 1fr}
+  .cta-section{padding:70px 16px}
+  .service-image{height:150px}
+  .renovation-icon{width:70px;height:70px;font-size:1.8rem}
+  .contact-card{padding:22px}
+  .contact-icon{width:66px;height:66px;font-size:1.8rem}
+  .section-title{font-size:clamp(1.6rem,6vw,2rem)}
+  .row-card{padding:40px 26px}
+  .row-card h3{font-size:1.6rem}
+  .row-card p{font-size:1rem}
+  .lightbox-nav{width:52px;height:52px;font-size:1.3rem}
+  .lightbox-nav.prev{right:12px}
+  .lightbox-nav.next{left:12px}
+  .lightbox-close{width:48px;height:48px;top:12px;right:12px}
+  .lightbox-counter{bottom:20px;padding:8px 20px;font-size:.85rem}
+  .lightbox-thumbs{bottom:66px;padding:6px}
+  .lightbox-thumb{width:42px;height:42px}
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<aside class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <div class="brand"><div class="brand-icon"><i class="fas fa-crown"></i></div><span>محمد الحميقاني</span></div>
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="mobile-menu-links">
+    <li><a href="#home" class="menu-link"><i class="fas fa-home"></i><span>الرئيسية</span></a></li>
+    <li><a href="#about" class="menu-link"><i class="fas fa-info-circle"></i><span>من نحن</span></a></li>
+    <li><a href="#services" class="menu-link"><i class="fas fa-tools"></i><span>خدماتنا</span></a></li>
+    <li><a href="#renovation" class="menu-link"><i class="fas fa-hard-hat"></i><span>ترميم بيوت</span></a></li>
+    <li><a href="#videos" class="menu-link"><i class="fas fa-video"></i><span>فيديوهات</span></a></li>
+    <li><a href="#albums" class="menu-link"><i class="fas fa-images"></i><span>أعمالنا</span></a></li>
+    <li><a href="#reviews" class="menu-link"><i class="fas fa-star"></i><span>آراء العملاء</span></a></li>
+    <li><a href="#contact" class="menu-link"><i class="fas fa-phone"></i><span>تواصل</span></a></li>
+    <li><a href="#developer" class="menu-link dev-link-item"><i class="fas fa-code"></i><span>مطور هذا الموقع</span></a></li>
+  </ul>
+  <a href="https://wa.me/966551135895" class="mobile-menu-cta" target="_blank"><i class="fab fa-whatsapp"></i> اطلب معاينة مجانية</a>
+</aside>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+  <button class="lightbox-nav prev" id="lightboxPrev"><i class="fas fa-chevron-right"></i></button>
+  <div class="lightbox-img-wrap"><img id="lightboxImg" src="" alt=""></div>
+  <button class="lightbox-nav next" id="lightboxNext"><i class="fas fa-chevron-left"></i></button>
+  <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+  <div class="lightbox-counter" id="lightboxCounter">1 / 23</div>
+</div>
+
+<!-- FLOATING BUTTONS (أعلى الشاشة) -->
+<div class="floating-btns">
+  <a href="https://wa.me/966551135895" class="float-btn whatsapp" target="_blank" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+966551135895" class="float-btn phone" aria-label="اتصال"><i class="fas fa-phone"></i></a>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <div class="logo-icon"><i class="fas fa-crown"></i></div>
+      <div class="logo-text">محمد<span>الحميقاني</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="#home">الرئيسية</a>
+      <a href="#about">من نحن</a>
+      <a href="#services">خدماتنا</a>
+      <a href="#renovation">ترميم بيوت</a>
+      <a href="#videos">فيديوهات</a>
+      <a href="#albums">أعمالنا</a>
+      <a href="#reviews">آراء العملاء</a>
+      <a href="#contact">تواصل</a>
+      <a href="#developer" class="dev-link">مطور هذا الموقع</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع"><i class="fas fa-moon"></i></button>
+      <a href="#contact" class="nav-cta">اطلب معاينة</a>
+      <button class="menu-toggle-mobile" id="menuToggleMobile" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fas fa-star"></i> الوجهة الأولى للديكور في الرياض</div>
+    <h1>نصمّم الفخامة<br><span>ونحوّل المساحات إلى تحف</span></h1>
+    <p>محمد الحميقاني للديكورات والترميم — خبرة سنوات في تصميم وتنفيذ ديكورات الجبس بورد، الباركيه، الدهانات، خزائن الملابس، وترميم البيوت بأعلى معايير الاحترافية في الرياض.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/966551135895?text=مرحباً، أرغب في الحصول على عرض سعر" class="btn btn-gold" target="_blank"><i class="fab fa-whatsapp"></i> احصل على عرض سعر</a>
+      <a href="#albums" class="btn btn-outline"><i class="fas fa-images"></i> شاهد أعمالنا</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>+10</strong><span>سنوات خبرة</span></div>
+      <div class="stat"><strong>100%</strong><span>رضا العملاء</span></div>
+    </div>
+  </div>
+  <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})"><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-hero" id="about">
+  <div class="about-bg"></div>
+  <div class="about-overlay"></div>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">من نحن</span>
+      <h2 class="section-title">رؤيتنا <span>ومهمتنا</span></h2>
+      <p class="section-sub">نعمل على تحويل كل مساحة إلى تحفة فنية تليق بأصحابها</p>
+    </div>
+    <div class="row-grid">
+      <div class="row-card">
+        <div class="row-icon"><i class="fas fa-eye"></i></div>
+        <h3>رؤيتنا</h3>
+        <p>أن نكون الخيار الأول في مجال الديكور الداخلي وترميم البيوت بالمملكة العربية السعودية، وأن نقدم تصاميم مبتكرة تتجاوز توقعات عملائنا وترتقي بمعايير الجمال في كل مساحة نعمل عليها.</p>
+      </div>
+      <div class="row-card">
+        <div class="row-icon"><i class="fas fa-bullseye"></i></div>
+        <h3>مهمتنا</h3>
+        <p>تقديم خدمات ديكور وترميم عالية الجودة بأفضل الأسعار، مع الالتزام التام بالمواعيد واستخدام أفضل المواد، وإرضاء العميل في كل مرحلة من مراحل المشروع حتى التسليم النهائي.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section gray" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">خدماتنا</span>
+      <h2 class="section-title">جميع أنواع الديكورات</h2>
+      <p class="section-sub">نغطي جميع أنواع وأشكال الديكورات الداخلية والخارجية بأحدث التصاميم</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <span class="service-badge">الأكثر طلباً</span>
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=600&q=80" alt="ديكورات شاشات تلفزيون" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-tv"></i></div>
+        </div>
+        <h3>ديكورات شاشات تلفزيون</h3>
+        <p>خلفيات جبس بورد، خشب، رخام، وبديل خشب بتصاميم عصرية مذهلة</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80" alt="ديكورات صالات ومجالس" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-couch"></i></div>
+        </div>
+        <h3>ديكورات صالات ومجالس</h3>
+        <p>تصميم وتنفيذ ديكورات صالات ومجالس فخمة مع تنسيق كامل للأثاث والإضاءة</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80" alt="ديكورات غرف النوم" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-bed"></i></div>
+        </div>
+        <h3>ديكورات غرف النوم</h3>
+        <p>تصاميم هادئة وأنيقة لغرف النوم الرئيسية وغرف الأطفال بأحدث الصيحات</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=600&q=80" alt="ديكورات مطابخ" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-utensils"></i></div>
+        </div>
+        <h3>ديكورات مطابخ</h3>
+        <p>تصميم مطابخ عصرية بجميع الأنواع مع خزائن وإضاءة عملية وجميلة</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80" alt="ديكورات حمامات" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-bath"></i></div>
+        </div>
+        <h3>ديكورات حمامات</h3>
+        <p>تصميم حمامات فاخرة مع رخام وإضاءة وتشطيبات عالية الجودة</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=600&q=80" alt="جبس بورد وأسقف مستعارة" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-home"></i></div>
+        </div>
+        <h3>جبس بورد وأسقف مستعارة</h3>
+        <p>تركيب جبس بورد بجميع الأنواع مع تصاميم حسب الطلب</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80" alt="فوم وبراويز" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-star"></i></div>
+        </div>
+        <h3>فوم وبراويز</h3>
+        <p>تركيب فوم وبراويز بأشكال هندسية راقية لإضافة لمسة فنية</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=600&q=80" alt="باركيه وأرضيات" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-layer-group"></i></div>
+        </div>
+        <h3>باركيه وأرضيات</h3>
+        <p>تركيب باركيه (ألماني، صيني، تركي) مع أرضيات SPC و PVC</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80" alt="ورق جدران ودهانات" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-scroll"></i></div>
+        </div>
+        <h3>ورق جدران ودهانات</h3>
+        <p>تركيب ورق جدران ودهانات عصرية (ديكورية، ثلاثي الأبعاد)</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80" alt="إضاءة مخفية وديكورية" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-lightbulb"></i></div>
+        </div>
+        <h3>إضاءة مخفية وديكورية</h3>
+        <p>تصميم وتركيب جميع أنواع الإضاءة المخفية والديكورية</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="رخام وجرانيت" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-gem"></i></div>
+        </div>
+        <h3>رخام وجرانيت</h3>
+        <p>تركيب رخام وجرانيت للأرضيات والجدران والمداخل بأفخم الأنواع</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="بديل خشب وكلادينج" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-vector-square"></i></div>
+        </div>
+        <h3>بديل خشب وكلادينج</h3>
+        <p>تركيب بديل الخشب والكلادينج للديكورات الداخلية والخارجية</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="ديكورات مداخل وممرات" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-door-open"></i></div>
+        </div>
+        <h3>ديكورات مداخل وممرات</h3>
+        <p>تصميم مداخل وممرات فخمة تعطي انطباعاً أولياً رائعاً</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="ديكورات مكاتب وشركات" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-briefcase"></i></div>
+        </div>
+        <h3>ديكورات مكاتب وشركات</h3>
+        <p>تصميم وتنفيذ ديكورات مكاتب وشركات ومحلات تجارية</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80" alt="ديكورات خارجية وحدائق" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-tree"></i></div>
+        </div>
+        <h3>ديكورات خارجية وحدائق</h3>
+        <p>تصميم ديكورات خارجية وحدائق ومجالس خارجية بأحدث التصاميم</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=600&q=80" alt="ستائر وشترات" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-window-maximize"></i></div>
+        </div>
+        <h3>ستائر وشترات</h3>
+        <p>تركيب جميع أنواع الستائر (مخمل، شيفون، رول) والشترات الحديثة</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=600&q=80" alt="تركيب المضلات الحديد والهناجر" loading="lazy">
+          <div class="service-image-icon"><i class="fas fa-warehouse"></i></div>
+        </div>
+        <h3>تركيب المضلات الحديد والهناجر</h3>
+        <p>تصميم وتركيب مضلات السيارات والهناجر الحديدية والمستودعات بمواصفات هندسية عالية</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RENOVATION -->
+<section class="section navy renovation-section" id="renovation">
+  <div class="container renovation-content">
+    <div class="section-head">
+      <span class="section-tag">ترميم بيوت</span>
+      <h2 class="section-title">يتم توفير خدمة ترميم البيوت</h2>
+      <p class="section-sub">نقوم بترميم البيوت والشقق والفلل بشكل كامل — من الألف إلى الياء</p>
+    </div>
+    <div class="renovation-grid">
+      <div class="renovation-card"><div class="renovation-icon"><i class="fas fa-tools"></i></div><h3>ترميم شامل</h3><p>ترميم البيوت القديمة بشكل كامل مع تحديث كل التفاصيل</p></div>
+      <div class="renovation-card"><div class="renovation-icon"><i class="fas fa-paint-roller"></i></div><h3>تجديد الدهانات</h3><p>إعادة دهان البيوت بدهانات عصرية وألوان حديثة</p></div>
+      <div class="renovation-card"><div class="renovation-icon"><i class="fas fa-layer-group"></i></div><h3>تغيير الأرضيات</h3><p>استبدال الأرضيات القديمة بباركيه أو رخام أو SPC</p></div>
+      <div class="renovation-card"><div class="renovation-icon"><i class="fas fa-bolt"></i></div><h3>تجديد الكهرباء</h3><p>تحديث التمديدات الكهربائية والإضاءة بالكامل</p></div>
+      <div class="renovation-card"><div class="renovation-icon"><i class="fas fa-shower"></i></div><h3>ترميم الحمامات</h3><p>تجديد الحمامات بالكامل مع سباكة ورخام وتشطيبات</p></div>
+      <div class="renovation-card"><div class="renovation-icon"><i class="fas fa-utensils"></i></div><h3>ترميم المطابخ</h3><p>تجديد المطابخ القديمة أو تغييرها بالكامل</p></div>
+      <div class="renovation-card"><div class="renovation-icon"><i class="fas fa-window-restore"></i></div><h3>تجديد الأبواب والنوافذ</h3><p>استبدال الأبواب والنوافذ القديمة بأخرى حديثة</p></div>
+      <div class="renovation-card"><div class="renovation-icon"><i class="fas fa-fire-extinguisher"></i></div><h3>معالجة الرطوبة</h3><p>معالجة مشاكل الرطوبة والتسريبات بشكل احترافي</p></div>
+    </div>
+    <div class="renovation-cta">
+      <a href="https://wa.me/966551135895?text=مرحباً، أريد خدمة ترميم بيوت" class="btn btn-gold" target="_blank"><i class="fab fa-whatsapp"></i> اطلب خدمة الترميم الآن</a>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="section" id="videos">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">فيديوهات</span>
+      <h2 class="section-title">شاهد أعمالنا</h2>
+      <p class="section-sub">مقاطع قصيرة من مشاريعنا الأخيرة — اضغط لتشغيل الفيديو بصوت</p>
+    </div>
+    <div class="videos-wrap" id="videosWrap"></div>
+  </div>
+</section>
+
+<!-- ALBUMS -->
+<section class="section gray" id="albums">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">معرض الأعمال</span>
+      <h2 class="section-title">أعمالنا</h2>
+      <p class="section-sub">اضغط على أي صورة لعرضها بحجم كامل والتنقل بين بقية الصور</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section navy">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">لماذا نحن؟</span>
+      <h2 class="section-title">شريكك الأمثل في رحلة الجمال</h2>
+      <p class="section-sub">مزايا تجعلنا الخيار الأول لعملائنا</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon"><i class="fas fa-lightbulb"></i></div><h3>الإبداع</h3><p>تصاميم مبتكرة وفريدة تواكب أحدث صيحات الديكور العالمية</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-medal"></i></div><h3>الجودة</h3><p>نستخدم أفضل المواد ونضمن تنفيذاً احترافياً بمعايير عالية</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-clock"></i></div><h3>الالتزام</h3><p>نسلّم مشاريعنا في الوقت المحدد دون أي تأخير</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-hand-holding-usd"></i></div><h3>أسعار منافسة</h3><p>أفضل الأسعار في السوق مع الحفاظ على أعلى جودة</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section gray" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">الأسئلة الشائعة</span>
+      <h2 class="section-title">استفسارات يكثر طرحها</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>كم تستغرق مدة تنفيذ الديكور؟</span><span class="faq-icon">+</span></div><div class="faq-answer">المدة تعتمد على حجم المشروع، لكن في الغالب تتراوح بين 3-10 أيام للديكورات العادية، وقد تزيد للمشاريع الكبيرة والترميم الشامل.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>هل المعاينة مجانية؟</span><span class="faq-icon">+</span></div><div class="faq-answer">نعم، المعاينة مجانية 100% ولا نطلب أي مبلغ قبل الاتفاق النهائي.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>ما هي مناطق التغطية؟</span><span class="faq-icon">+</span></div><div class="faq-answer">نغطي جميع أحياء الرياض والمناطق المجاورة، ونستقبل طلبات من خارج الرياض حسب حجم المشروع.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>هل توفرون مواد التنفيذ؟</span><span class="faq-icon">+</span></div><div class="faq-answer">نعم، نوفر جميع المواد بأفضل الأسعار، أو يمكنك توفيرها بنفسك ونحن نتولى التنفيذ.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>هل هناك ضمان على الأعمال؟</span><span class="faq-icon">+</span></div><div class="faq-answer">نعم، نقدم ضمان لمدة سنة كاملة على جميع أعمالنا من أي عيوب في التنفيذ.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>هل تقومون بترميم البيوت القديمة؟</span><span class="faq-icon">+</span></div><div class="faq-answer">نعم، نوفر خدمة ترميم البيوت الشاملة: من الدهانات والأرضيات والكهرباء والسباكة وترميم المطابخ والحمامات، بأسعار تنافسية وجودة عالية.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS (فارغ - سيتم الربط بـ Firebase لاحقاً) -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">آراء العملاء</span>
+      <h2 class="section-title">ماذا قالوا عنا</h2>
+      <p class="section-sub">آراء حقيقية من عملائنا الكرام</p>
+    </div>
+    <div class="reviews-grid" id="reviewsGrid"></div>
+    <div class="reviews-empty" id="reviewsEmpty">
+      <i class="fas fa-comment-dots"></i>
+      <p>سيتم عرض آراء العملاء هنا قريباً</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-hero" id="contact">
+  <div class="contact-bg"></div>
+  <div class="contact-overlay"></div>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">تواصل معنا</span>
+      <h2 class="section-title">تواصل معنا الآن</h2>
+      <p class="section-sub">اختر وسيلة التواصل المفضلة لديك، وسنرد عليك فوراً</p>
+    </div>
+    <div class="contact-list">
+      <a href="https://wa.me/966551135895" class="contact-card" target="_blank"><div class="contact-icon whatsapp"><i class="fab fa-whatsapp"></i></div><div class="contact-body"><h3>واتساب</h3><p>محادثة مباشرة للرد السريع</p></div><i class="fas fa-arrow-left contact-arrow"></i></a>
+      <a href="tel:+966551135895" class="contact-card"><div class="contact-icon phone"><i class="fas fa-phone"></i></div><div class="contact-body"><h3>اتصال مباشر</h3><p>اتصل بنا الآن: 0551135895</p></div><i class="fas fa-arrow-left contact-arrow"></i></a>
+      <div class="contact-card static-card"><div class="contact-icon location"><i class="fas fa-map-marker-alt"></i></div><div class="contact-body"><h3>الموقع</h3><p>الرياض - حي الحمرا - شارع خالد بن الوليد</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-content">
+    <h2>دعنا نبني لك منزل أحلامك</h2>
+    <p>تواصل معنا الآن واحصل على معاينة مجانية وعرض سعر خاص لمشروعك</p>
+    <a href="https://wa.me/966551135895" class="cta-btn" target="_blank"><i class="fab fa-whatsapp"></i> تواصل معنا الآن</a>
+  </div>
+</section>
+
+<!-- DEVELOPER -->
+<section class="section gray" id="developer">
+  <div class="container">
+    <div class="dev-card">
+      <div class="dev-logo"><div class="dev-logo-icon">N</div><div class="dev-logo-text">Nubo<span>Web</span></div></div>
+      <h2 class="dev-name">معتز الداوودي</h2>
+      <p class="dev-role">✦ مطوّر ومبرمج مواقع ويب ✦</p>
+      <p class="dev-bio">تم تطوير هذا الموقع وبنائه عبر المطوّر <strong>معتز الداودي</strong>.<br>أبني مواقع حديثة وسريعة واحترافية، ومتخصص في تطوير <strong>أدوات بايثون</strong> و<strong>بوتات تيليجرام</strong> و<strong>تطبيقات أندرويد</strong>.<br><strong>اطرح فقط فكرتك والباقي علينا</strong></p>
+      <div class="dev-contacts">
+        <a href="https://wa.me/967779818705" class="dev-contact whatsapp" target="_blank"><i class="fab fa-whatsapp"></i><span>واتساب</span></a>
+        <a href="https://t.me/w_53_w" class="dev-contact telegram" target="_blank"><i class="fab fa-telegram"></i><span>تيليجرام</span></a>
+        <a href="https://t.me/apps_5w_mx_307" class="dev-contact channel" target="_blank"><i class="fas fa-bullhorn"></i><span>القناة</span></a>
+      </div>
+      <a href="https://nubo-web-vip-32i1.onrender.com" class="dev-visit" target="_blank">
+        <span class="dev-visit-icon"><i class="fas fa-globe"></i></span>
+        <div class="dev-visit-body"><span class="dev-visit-title">زيارة موقعي Nubo Web</span><span class="dev-visit-sub">شاهد أعمالي وخدماتي الأخرى</span></div>
+        <span class="dev-visit-arrow">←</span>
+      </a>
+      <div class="dev-footer">تم تطوير هذا الموقع وبنائه عبر المطوّر <strong>معتز الداودي</strong><br><span style="color:var(--gold-3);font-weight:800;">Nubo Web</span> — جميع الحقوق محفوظة لدى <strong>محمد الحميقاني</strong> © 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><div class="footer-brand-icon"><i class="fas fa-crown"></i></div><div class="footer-brand-text">محمد<span>الحميقاني</span></div></div>
+        <p>محمد الحميقاني للديكورات والترميم - متخصصون في جميع أنواع الديكورات الداخلية والخارجية وترميم البيوت بأحدث التصاميم العصرية.</p>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#renovation">ترميم بيوت</a></li>
+          <li><a href="#albums">أعمالنا</a></li>
+          <li><a href="#reviews">آراء العملاء</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+          <li><a href="#developer">مطور هذا الموقع</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>معلومات التواصل</h4>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>الرياض - حي الحمرا - شارع خالد بن الوليد</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i><span dir="ltr">+966 55 113 5895</span></div>
+        <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><span dir="ltr">+966 55 113 5895</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="dev-line">تم تطوير هذا الموقع عبر المطوّر <strong>معتز الداودي</strong></span>
+      <span class="rights-line">جميع حقوق الموقع محفوظة لدى <strong>محمد الحميقاني</strong> © <span id="year"></span></span>
+      <a href="#developer" class="dev-link-btn"><i class="fas fa-code"></i> مطور هذا الموقع</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+var themeBtn = document.getElementById('themeToggle');
+var themeIcon = themeBtn.querySelector('i');
+themeBtn.addEventListener('click',function(){
+  document.body.classList.toggle('dark');
+  var isDark = document.body.classList.contains('dark');
+  themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+  document.getElementById('navbar').classList.toggle('dark-mode', isDark);
+});
+
+/* ==================== MOBILE MENU (محسّن - ينتظر إغلاق القائمة) ==================== */
+var menuBtn = document.getElementById('menuToggleMobile');
+var mobileMenu = document.getElementById('mobileMenu');
+var mobileOverlay = document.getElementById('mobileOverlay');
+var mobileClose = document.getElementById('mobileMenuClose');
+function openMobileMenu(){mobileMenu.classList.add('open');mobileOverlay.classList.add('open');document.body.style.overflow='hidden'}
+function closeMobileMenu(){mobileMenu.classList.remove('open');mobileOverlay.classList.remove('open');document.body.style.overflow=''}
+if(menuBtn) menuBtn.addEventListener('click', openMobileMenu);
+if(mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+if(mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+
+/* ✅ إصلاح التنقل من القائمة الجانبية */
+document.querySelectorAll('.menu-link').forEach(function(link){
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    var href = this.getAttribute('href');
+    closeMobileMenu();
+    if(href && href.startsWith('#')){
+      setTimeout(function(){
+        var target = document.querySelector(href);
+        if(target){
+          var top = target.offsetTop - 70;
+          window.scrollTo({top: top, behavior: 'auto'});
+        }
+      }, 500);
+    }
+  });
+});
+
+/* ==================== VIDEOS (Cloudinary - Best Quality) ==================== */
+var CLOUD_NAME = 'g6zmbksm';
+
+var VIDEO_IDS = [
+  'WhatsApp_Video_2026-09-26_at_5.33.22_PM_2',
+  'WhatsApp_Video_2026-09-26_at_5.33.22_PM_1',
+  'WhatsApp_Video_2026-09-26_at_5.33.40_PM',
+  'WhatsApp_Video_2026-09-26_at_5.33.35_PM',
+  'WhatsApp_Video_2026-09-26_at_5.33.13_PM',
+  'WhatsApp_Video_2026-09-26_at_5.33.18_PM',
+  'WhatsApp_Video_2026-09-26_at_5.33.40_PM_1',
+  'WhatsApp_Video_2026-09-26_at_5.33.14_PM'
+];
+
+function cloudinaryVideoUrl(publicId){
+  return 'https://res.cloudinary.com/' + CLOUD_NAME + '/video/upload/q_auto:best,vc_h264/' + publicId + '.mp4';
+}
+
+function cloudinaryThumbUrl(publicId){
+  return 'https://res.cloudinary.com/' + CLOUD_NAME + '/video/upload/so_0,w_800,h_450,c_fill,q_auto:best/' + publicId + '.jpg';
+}
+
+function buildVideos(){
+  var wrap = document.getElementById('videosWrap');
+  if(!wrap) return;
+  var html = '';
+  VIDEO_IDS.forEach(function(publicId){
+    var thumb = cloudinaryThumbUrl(publicId);
+    var videoUrl = cloudinaryVideoUrl(publicId);
+    html += '<div class="video-card">' +
+      '<div class="video-wrapper" data-src="' + videoUrl + '" onclick="playVideo(this)">' +
+        '<div class="video-placeholder" style="background-image:url(\'' + thumb + '\');background-size:cover;background-position:center;width:100%;height:100%"></div>' +
+        '<div class="video-overlay"><div class="play-btn"></div></div>' +
+      '</div>' +
+    '</div>';
+  });
+  wrap.innerHTML = html;
+}
+buildVideos();
+
+function playVideo(wrapper){
+  var card = wrapper.closest('.video-card');
+  var video = wrapper.querySelector('video');
+
+  if(!video){
+    var src = wrapper.getAttribute('data-src');
+    var placeholder = wrapper.querySelector('.video-placeholder');
+    video = document.createElement('video');
+    video.src = src;
+    video.controls = true;
+    video.playsInline = true;
+    video.preload = 'auto';
+    video.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block';
+    if(placeholder) placeholder.replaceWith(video);
+    video.load();
+    video.play().catch(function(e){console.log('Video error:', e)});
+    card.classList.add('playing');
+    return;
+  }
+
+  if(video.paused){
+    document.querySelectorAll('.video-wrapper video').forEach(function(v){
+      if(v !== video){v.pause();v.currentTime = 0;v.closest('.video-card').classList.remove('playing')}
+    });
+    video.muted = false;
+    video.play().catch(function(e){console.log('Video error:', e)});
+    card.classList.add('playing');
+  } else {
+    video.pause();
+    card.classList.remove('playing');
+  }
+}
+
+/* ==================== GALLERY (index-html - .jpg) ==================== */
+var BASE_URL = 'https://raw.githubusercontent.com/king710aaz/index-html/main/';
+var IMG_EXT = '.jpg';
+var TOTAL_IMAGES = 22;
+var EXCLUDED = [];
+var AVAILABLE_IMAGES = [];
+for(var i = 1; i <= TOTAL_IMAGES; i++){
+  if(!EXCLUDED.includes(i)) AVAILABLE_IMAGES.push(i);
+}
+
+function buildGallery(){
+  var grid = document.getElementById('galleryGrid');
+  if(!grid) return;
+  var html = '';
+  AVAILABLE_IMAGES.forEach(function(num, idx){
+    html += '<div class="gallery-item" onclick="openLightbox(' + num + ')">' +
+      '<img src="' + BASE_URL + num + IMG_EXT + '" alt="عمل ' + num + '" loading="lazy">' +
+      '<div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>' +
+      '<span class="gallery-counter">' + (idx + 1) + ' / ' + AVAILABLE_IMAGES.length + '</span>' +
+      '</div>';
+  });
+  grid.innerHTML = html;
+}
+buildGallery();
+
+var lightbox = document.getElementById('lightbox');
+var lightboxImg = document.getElementById('lightboxImg');
+var lightboxCounter = document.getElementById('lightboxCounter');
+var lightboxThumbs = document.getElementById('lightboxThumbs');
+var currentIndex = 0;
+
+function buildThumbs(){
+  var html = '';
+  AVAILABLE_IMAGES.forEach(function(num){
+    html += '<img class="lightbox-thumb" data-idx="' + num + '" src="' + BASE_URL + num + IMG_EXT + '" alt="" onclick="event.stopPropagation(); openLightbox(' + num + ')">';
+  });
+  lightboxThumbs.innerHTML = html;
+}
+buildThumbs();
+
+function openLightbox(imageNumber){
+  currentIndex = AVAILABLE_IMAGES.indexOf(imageNumber);
+  showImage();
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function showImage(){
+  var imageNumber = AVAILABLE_IMAGES[currentIndex];
+  lightboxImg.src = BASE_URL + imageNumber + IMG_EXT;
+  lightboxCounter.textContent = (currentIndex + 1) + ' / ' + AVAILABLE_IMAGES.length;
+
+  var thumbs = lightboxThumbs.querySelectorAll('.lightbox-thumb');
+  thumbs.forEach(function(t){
+    var thumbNum = parseInt(t.getAttribute('data-idx'));
+    t.classList.toggle('active', thumbNum === imageNumber);
+    if(thumbNum === imageNumber){
+      t.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+    }
+  });
+}
+
+function closeLightbox(){ lightbox.classList.remove('active'); document.body.style.overflow = ''; }
+function nextImage(e){ if(e) e.stopPropagation(); currentIndex = (currentIndex + 1) % AVAILABLE_IMAGES.length; showImage(); }
+function prevImage(e){ if(e) e.stopPropagation(); currentIndex = (currentIndex - 1 + AVAILABLE_IMAGES.length) % AVAILABLE_IMAGES.length; showImage(); }
+
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+document.getElementById('lightboxNext').addEventListener('click', nextImage);
+document.getElementById('lightboxPrev').addEventListener('click', prevImage);
+lightbox.addEventListener('click', function(e){ if(e.target === lightbox) closeLightbox(); });
+
+document.addEventListener('keydown', function(e){
+  if(!lightbox.classList.contains('active')) return;
+  if(e.key === 'Escape') closeLightbox();
+  else if(e.key === 'ArrowLeft') nextImage();
+  else if(e.key === 'ArrowRight') prevImage();
+});
+
+var touchStartX = 0;
+lightbox.addEventListener('touchstart', function(e){ touchStartX = e.changedTouches[0].screenX; }, {passive:true});
+lightbox.addEventListener('touchend', function(e){
+  var diff = touchStartX - e.changedTouches[0].screenX;
+  if(Math.abs(diff) > 50){ if(diff > 0) nextImage(); else prevImage(); }
+}, {passive:true});
+
+/* ==================== FAQ ==================== */
+function toggleFaq(el){
+  var item = el.parentElement;
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+  if(!wasOpen) item.classList.add('open');
+}
+
+/* ==================== SMOOTH SCROLL (عام) ==================== */
+document.querySelectorAll('a[href^="#"]:not(.menu-link)').forEach(function(link){
+  link.addEventListener('click',function(e){
+    var href = link.getAttribute('href');
+    if(href === '#') return;
+    var target = document.querySelector(href);
+    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'})}
+  });
+});
+</script>
+
+</body>
+</html>
